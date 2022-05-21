@@ -4,6 +4,7 @@ import co.com.sofka.domain.generic.Identity;
 
 public class ClientId extends Identity {
 
+    //crear una entidades cuando va a crear el evento
     public ClientId() {
     }
 

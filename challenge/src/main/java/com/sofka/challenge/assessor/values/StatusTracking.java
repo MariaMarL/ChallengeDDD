@@ -1,19 +1,21 @@
 package com.sofka.challenge.assessor.values;
 
 import co.com.sofka.domain.generic.ValueObject;
+import com.sofka.challenge.client.values.EnumOption;
 
 import java.util.Objects;
 
-public class Value implements ValueObject<Double> {
+public class StatusTracking implements ValueObject<EnumOption> {
 
-    private final Double value;
+    public final EnumOption value;
 
-    public Value(Double value) {
+
+    public StatusTracking(EnumOption value) {
         this.value = Objects.requireNonNull(value);
     }
 
     @Override
-    public Double value() {
+    public EnumOption value() {
         return this.value;
     }
 }
