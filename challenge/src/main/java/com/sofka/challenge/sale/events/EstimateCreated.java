@@ -11,7 +11,7 @@ public class EstimateCreated extends DomainEvent {
     private final EstimateId estimateId;
 
 
-    public EstimateCreated(String type, Date date, Value value, EstimateId estimateId) {
+    public EstimateCreated(Date date, Value value, EstimateId estimateId) {
         super("sofka.assessor.estimatecreated");
         this.date = date;
         this.value = value;

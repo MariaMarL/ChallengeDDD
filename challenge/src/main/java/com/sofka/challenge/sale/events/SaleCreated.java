@@ -1,7 +1,7 @@
-package com.sofka.challenge.assessor.events;
+package com.sofka.challenge.sale.events;
 
 import co.com.sofka.domain.generic.DomainEvent;
-import com.sofka.challenge.assessor.values.Name;
+import com.sofka.challenge.sale.values.Name;
 
 public class AssessorCreated extends DomainEvent {
 

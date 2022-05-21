@@ -23,7 +23,7 @@ public class Estimate extends Entity<EstimateId> {
         this.value = Objects.requireNonNull(value);
     }
 
-    public void updateEstimate(Date date, Value value) {
+    public void updateEstimate(Date date, Value value, EstimateId estimateId) {
         this.date = Objects.requireNonNull(date);
         this.value = Objects.requireNonNull(value);
     }
