@@ -1,4 +1,4 @@
-package com.sofka.challenge.assessor.values;
+package com.sofka.challenge.sale.values;
 
 import co.com.sofka.domain.generic.Identity;
 
@@ -11,7 +11,7 @@ public class TrackingId extends Identity {
         super(uuid);
     }
 
-    public TrackingId of(String Id){
+    public static TrackingId of(String Id){
         return new TrackingId(Id);
     }
 

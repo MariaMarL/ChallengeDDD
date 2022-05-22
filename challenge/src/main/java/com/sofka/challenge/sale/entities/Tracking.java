@@ -1,25 +1,38 @@
-package com.sofka.challenge.assessor.entities;
+package com.sofka.challenge.sale.entities;
 
 import co.com.sofka.domain.generic.Entity;
-import com.sofka.challenge.assessor.values.StatusTracking;
-import com.sofka.challenge.assessor.values.TrackingId;
-import com.sofka.challenge.client.values.RegisterId;
+import com.sofka.challenge.sale.values.StatusTracking;
+import com.sofka.challenge.sale.values.TrackingId;
+import com.sofka.challenge.share.values.Date;
 
-import java.util.Date;
 
 public class Tracking extends Entity<TrackingId> {
     private Date date;
-    private StatusTracking statusTracking;
-    private RegisterId registerId;
+    private StatusTracking state;
 
 
-    public Tracking(TrackingId entityId,
-                    Date date,
-                    StatusTracking statusTracking,
-                    RegisterId registerId) {
+    public Tracking(TrackingId entityId, Date date) {
         super(entityId);
         this.date=date;
-        this.statusTracking=statusTracking;;
-        this.registerId=registerId;
+        this.state =new StatusTracking(StatusTracking.Option.PROGRAMMED);;;
+
     }
+
+    public void ProgramTracking(Date date, StatusTracking state) {
+        this.date = date;
+        this.state = new StatusTracking(StatusTracking.Option.PROGRAMMED);
+    }
+
+    public void CancelTracking() {
+        this.state = new StatusTracking(StatusTracking.Option.CANCEL);
+    }
+
+    public Date date() {
+        return date;
+    }
+
+    public StatusTracking statusTracking() {
+        return state;
+    }
+
 }

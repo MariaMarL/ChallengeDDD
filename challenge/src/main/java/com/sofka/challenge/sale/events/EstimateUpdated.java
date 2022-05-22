@@ -1,22 +1,19 @@
-package com.sofka.challenge.assessor.events;
+package com.sofka.challenge.sale.events;
 
 import co.com.sofka.domain.generic.DomainEvent;
-import com.sofka.challenge.assessor.values.EstimateId;
-import com.sofka.challenge.assessor.values.Value;
+import com.sofka.challenge.sale.values.EstimateId;
+import com.sofka.challenge.sale.values.Value;
 import com.sofka.challenge.share.values.Date;
 
 public class EstimateUpdated extends DomainEvent {
 
     private final Date date;
     private final Value value;
-    private final EstimateId estimateId;
 
-
-    public EstimateUpdated(Date date, Value value, EstimateId estimateId) {
-        super("sofka.assessor.estimateupdated");
+    public EstimateUpdated(Date date, Value value) {
+        super("sofka.sale.estimateupdated");
         this.date = date;
         this.value = value;
-        this.estimateId = estimateId;
     }
 
     public Date date() {
@@ -27,7 +24,5 @@ public class EstimateUpdated extends DomainEvent {
         return value;
     }
 
-    public EstimateId estimateId() {
-        return estimateId;
-    }
+
 }

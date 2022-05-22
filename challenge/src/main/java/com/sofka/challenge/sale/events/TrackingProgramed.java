@@ -1,8 +1,8 @@
-package com.sofka.challenge.assessor.events;
+package com.sofka.challenge.sale.events;
 
 import co.com.sofka.domain.generic.DomainEvent;
-import com.sofka.challenge.assessor.values.StatusTracking;
-import com.sofka.challenge.assessor.values.TrackingId;
+import com.sofka.challenge.sale.values.StatusTracking;
+import com.sofka.challenge.sale.values.TrackingId;
 import com.sofka.challenge.client.values.RegisterId;
 import com.sofka.challenge.share.values.Date;
 
@@ -11,19 +11,17 @@ public class TrackingProgramed extends DomainEvent {
     private final Date date;
     private final StatusTracking statusTracking;
     private final TrackingId trackingId;
-    private final RegisterId registerId;
 
 
     public TrackingProgramed(Date date,
                              StatusTracking statusTracking,
-                             TrackingId trackingId,
-                             RegisterId registerId) {
-        super("sofka.assessor.trackingprogramed");
+                             TrackingId trackingId) {
+        super("sofka.sale.trackingprogramed");
         this.date = date;
         this.statusTracking = statusTracking;
         this.trackingId = trackingId;
-        this.registerId = registerId;
-    }
+     }
+
 
     public Date date() {
         return date;
@@ -37,7 +35,4 @@ public class TrackingProgramed extends DomainEvent {
         return trackingId;
     }
 
-    public RegisterId registerId() {
-        return registerId;
-    }
 }

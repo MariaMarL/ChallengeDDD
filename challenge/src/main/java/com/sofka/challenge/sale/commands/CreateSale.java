@@ -1,24 +1,24 @@
 package com.sofka.challenge.sale.commands;
 
 import co.com.sofka.domain.generic.Command;
-import com.sofka.challenge.sale.values.AssessorId;
+import com.sofka.challenge.sale.values.SaleId;
 import com.sofka.challenge.sale.values.Name;
 
-public class CreateAssessor extends Command {
+public class CreateSale extends Command {
     private final Name name;
-    private final AssessorId assessorId;
+    private final SaleId saleId;
 
 
-    public CreateAssessor(Name name, AssessorId assessorId) {
+    public CreateSale(Name name, SaleId saleId) {
         this.name = name;
-        this.assessorId = assessorId;
+        this.saleId = saleId;
     }
 
     public Name name() {
         return name;
     }
 
-    public AssessorId assessorId() {
-        return assessorId;
+    public SaleId saleId() {
+        return saleId;
     }
 }

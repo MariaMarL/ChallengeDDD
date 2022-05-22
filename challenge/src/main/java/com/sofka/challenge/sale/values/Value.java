@@ -1,4 +1,4 @@
-package com.sofka.challenge.assessor.values;
+package com.sofka.challenge.sale.values;
 
 import co.com.sofka.domain.generic.ValueObject;
 
@@ -14,6 +14,6 @@ public class Value implements ValueObject<Double> {
 
     @Override
     public Double value() {
-        return this.value;
+        return value;
     }
 }

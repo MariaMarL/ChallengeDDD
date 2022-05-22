@@ -1,18 +1,13 @@
-package com.sofka.challenge.assessor.events;
+package com.sofka.challenge.sale.events;
 
 import co.com.sofka.domain.generic.DomainEvent;
-import com.sofka.challenge.assessor.values.StatusTracking;
+import com.sofka.challenge.sale.values.StatusTracking;
 
 public class TrackingCanceled extends DomainEvent {
 
-    private final StatusTracking statusTracking;
+    public TrackingCanceled() {
+            super("sofka.sale.trackingcanceled");
 
-    public TrackingCanceled(StatusTracking statusTracking) {
-            super("sofka.client.trackingcanceled");
-            this.statusTracking = statusTracking;
     }
 
-    public StatusTracking statusTracking() {
-        return statusTracking;
-    }
 }

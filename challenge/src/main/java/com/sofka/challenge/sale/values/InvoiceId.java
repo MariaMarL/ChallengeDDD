@@ -1,6 +1,5 @@
-package com.sofka.challenge.assessor.values;
+package com.sofka.challenge.sale.values;
 
-import co.com.sofka.domain.generic.Entity;
 import co.com.sofka.domain.generic.Identity;
 
 public class InvoiceId extends Identity {
@@ -12,7 +11,7 @@ public class InvoiceId extends Identity {
         super(uuid);
     }
 
-    public InvoiceId of(String Id){
+    public static InvoiceId of(String Id){
         return new InvoiceId(Id);
     }
 

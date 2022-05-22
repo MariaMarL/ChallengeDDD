@@ -2,18 +2,18 @@ package com.sofka.challenge.sale.values;
 
 import co.com.sofka.domain.generic.Identity;
 
-public class AssessorId extends Identity {
+public class SaleId extends Identity {
 
 
-    public AssessorId() {
+    public SaleId() {
     }
 
 
-    private AssessorId(String uuid) {
+    private SaleId(String uuid) {
         super(uuid);
     }
 
-    public static AssessorId of(String Id){
-        return new AssessorId(Id);
+    public static SaleId of(String Id){
+        return new SaleId(Id);
     }
 }

@@ -1,9 +1,9 @@
-package com.sofka.challenge.assessor.commands;
+package com.sofka.challenge.sale.commands;
 
 import co.com.sofka.domain.generic.Command;
-import com.sofka.challenge.assessor.values.AssessorId;
-import com.sofka.challenge.assessor.values.InvoiceId;
-import com.sofka.challenge.assessor.values.Value;
+import com.sofka.challenge.sale.values.SaleId;
+import com.sofka.challenge.sale.values.InvoiceId;
+import com.sofka.challenge.sale.values.Value;
 import com.sofka.challenge.client.values.RegisterId;
 import com.sofka.challenge.share.values.Date;
 
@@ -11,16 +11,14 @@ public class CreateInvoice extends Command {
     private final Date date;
     private final Value value;
     private final InvoiceId invoiceId;
-    private final RegisterId registerId;
-    private final AssessorId assessorId;
+    private final SaleId saleId;
 
 
-    public CreateInvoice(Date date, Value value, InvoiceId invoiceId, RegisterId registerId, AssessorId assessorId) {
+    public CreateInvoice(Date date, Value value, InvoiceId invoiceId, SaleId saleId) {
         this.date = date;
         this.value = value;
         this.invoiceId = invoiceId;
-        this.registerId = registerId;
-        this.assessorId = assessorId;
+        this.saleId = saleId;
     }
 
     public Date date() {
@@ -35,11 +33,7 @@ public class CreateInvoice extends Command {
         return invoiceId;
     }
 
-    public RegisterId registerId() {
-        return registerId;
-    }
-
-    public AssessorId assessorId() {
-        return assessorId;
+    public SaleId saleId() {
+        return saleId;
     }
 }

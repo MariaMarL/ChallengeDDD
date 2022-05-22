@@ -1,22 +1,19 @@
-package com.sofka.challenge.assessor.commands;
+package com.sofka.challenge.sale.commands;
 
-import com.sofka.challenge.assessor.values.AssessorId;
-import com.sofka.challenge.assessor.values.StatusTracking;
+import co.com.sofka.domain.generic.Command;
+import com.sofka.challenge.sale.values.SaleId;
+import com.sofka.challenge.sale.values.StatusTracking;
 
-public class CancelTracking {
-    private final StatusTracking statusTracking;
-    private final AssessorId assessorId;
+public class CancelTracking extends Command {
 
-    public CancelTracking(StatusTracking statusTracking, AssessorId assessorId) {
-        this.statusTracking = statusTracking;
-        this.assessorId = assessorId;
+    private final SaleId saleId;
+
+    public CancelTracking( SaleId saleId) {
+
+        this.saleId = saleId;
     }
 
-    public StatusTracking statusTracking() {
-        return statusTracking;
-    }
-
-    public AssessorId assessorId() {
-        return assessorId;
+    public SaleId saleId() {
+        return saleId;
     }
 }

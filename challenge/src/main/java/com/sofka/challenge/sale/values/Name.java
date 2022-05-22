@@ -1,4 +1,4 @@
-package com.sofka.challenge.assessor.values;
+package com.sofka.challenge.sale.values;
 
 import co.com.sofka.domain.generic.ValueObject;
 

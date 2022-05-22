@@ -1,8 +1,8 @@
-package com.sofka.challenge.assessor.events;
+package com.sofka.challenge.sale.events;
 
 import co.com.sofka.domain.generic.DomainEvent;
-import com.sofka.challenge.assessor.values.InvoiceId;
-import com.sofka.challenge.assessor.values.Value;
+import com.sofka.challenge.sale.values.InvoiceId;
+import com.sofka.challenge.sale.values.Value;
 import com.sofka.challenge.client.values.RegisterId;
 import com.sofka.challenge.share.values.Date;
 
@@ -10,16 +10,12 @@ public class InvoiceUpdated extends DomainEvent {
 
     private final Date date;
     private final Value value;
-    private final InvoiceId invoiceId;
-    private final RegisterId registerId;
 
 
-    public InvoiceUpdated(Date date, Value value, InvoiceId invoiceId, RegisterId registerId) {
-        super("sofka.assessor.invoiceupdated");
+    public InvoiceUpdated(Date date, Value value) {
+        super("sofka.sale.invoiceupdated");
         this.date = date;
         this.value = value;
-        this.invoiceId = invoiceId;
-        this.registerId = registerId;
     }
 
     public Date date() {
@@ -30,11 +26,4 @@ public class InvoiceUpdated extends DomainEvent {
         return value;
     }
 
-    public InvoiceId invoiceId() {
-        return invoiceId;
-    }
-
-    public RegisterId registerId() {
-        return registerId;
-    }
 }

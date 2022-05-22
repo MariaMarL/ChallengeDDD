@@ -1,23 +1,23 @@
-package com.sofka.challenge.assessor.commands;
+package com.sofka.challenge.sale.commands;
 
 import co.com.sofka.domain.generic.Command;
-import com.sofka.challenge.assessor.values.AssessorId;
-import com.sofka.challenge.assessor.values.EstimateId;
-import com.sofka.challenge.assessor.values.Value;
+import com.sofka.challenge.sale.values.SaleId;
+import com.sofka.challenge.sale.values.EstimateId;
+import com.sofka.challenge.sale.values.Value;
 import com.sofka.challenge.share.values.Date;
 
 public class CreateEstimate extends Command {
     private final Date date;
     private final Value value;
     private final EstimateId estimateId;
-    private final AssessorId assessorId;
+    private final SaleId saleId;
 
 
-    public CreateEstimate(Date date, Value value, EstimateId estimateId, AssessorId assessorId) {
+    public CreateEstimate(Date date, Value value, EstimateId estimateId, SaleId saleId) {
         this.date = date;
         this.value = value;
         this.estimateId = estimateId;
-        this.assessorId = assessorId;
+        this.saleId = saleId;
     }
 
     public Date date() {
@@ -32,7 +32,7 @@ public class CreateEstimate extends Command {
         return estimateId;
     }
 
-    public AssessorId assessorId() {
-        return assessorId;
+    public SaleId saleId() {
+        return saleId;
     }
 }

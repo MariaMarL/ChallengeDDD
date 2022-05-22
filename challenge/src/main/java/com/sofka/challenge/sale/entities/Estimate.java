@@ -1,8 +1,8 @@
-package com.sofka.challenge.assessor.entities;
+package com.sofka.challenge.sale.entities;
 
 import co.com.sofka.domain.generic.Entity;
-import com.sofka.challenge.assessor.values.EstimateId;
-import com.sofka.challenge.assessor.values.Value;
+import com.sofka.challenge.sale.values.EstimateId;
+import com.sofka.challenge.sale.values.Value;
 import com.sofka.challenge.share.values.Date;
 
 import java.util.Objects;
@@ -23,7 +23,7 @@ public class Estimate extends Entity<EstimateId> {
         this.value = Objects.requireNonNull(value);
     }
 
-    public void updateEstimate(Date date, Value value, EstimateId estimateId) {
+    public void updateEstimate(Date date, Value value) {
         this.date = Objects.requireNonNull(date);
         this.value = Objects.requireNonNull(value);
     }
@@ -35,4 +35,6 @@ public class Estimate extends Entity<EstimateId> {
     public Value value() {
         return value;
     }
+
+
 }

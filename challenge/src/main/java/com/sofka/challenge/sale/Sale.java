@@ -5,59 +5,64 @@ import co.com.sofka.domain.generic.DomainEvent;
 import com.sofka.challenge.sale.entities.Estimate;
 import com.sofka.challenge.sale.entities.Invoice;
 import com.sofka.challenge.sale.entities.Tracking;
-import com.sofka.challenge.sale.events.SaleCreated;
-import com.sofka.challenge.sale.events.EstimateCreated;
-import com.sofka.challenge.sale.events.EstimateUpdated;
-import com.sofka.challenge.sale.values.SaleId;
-import com.sofka.challenge.sale.values.EstimateId;
-import com.sofka.challenge.sale.values.Name;
-import com.sofka.challenge.sale.values.Value;
+import com.sofka.challenge.sale.events.*;
+import com.sofka.challenge.sale.values.*;
 import com.sofka.challenge.share.values.Date;
 
 import java.util.List;
-import java.util.Objects;
 
-public class Assessor extends AggregateEvent<SaleId> {
+public class Sale extends AggregateEvent<SaleId> {
 
-    protected List<Estimate> estimate;
+    protected Estimate estimate;
     protected Invoice invoice;
     protected Tracking tracking;
     protected Name name;
 
-    public Assessor(SaleId entityId, Name name) {
+    public Sale(SaleId entityId, Name name) {
         super(entityId);
-        appendChange(new SaleCreated(name)).apply();
+        appendChange(new SaleCreated(entityId,name)).apply();
     }
 
-    private Assessor(SaleId assessorId){
-        super(assessorId);
-        subscribe(new AssessorChanger(this));
+    private Sale(SaleId saleId){
+        super(saleId);
+        subscribe(new SaleChange(this));
     }
 
-    private static Assessor from(SaleId assessorId, List<DomainEvent> events){
-        Assessor assessor = new Assessor(assessorId);
-        events.forEach((event)-> assessor.applyEvent(event));
-        return assessor;
+    public static Sale from(SaleId saleId, List<DomainEvent> events){
+        Sale sale = new Sale(saleId);
+        events.forEach((event)-> sale.applyEvent(event));
+        return sale;
     }
 
-    public void createEstimate(Date date, Value value, EstimateId estimateId){
-        Objects.requireNonNull(date);
-        Objects.requireNonNull(value);
-        Objects.requireNonNull(estimateId);
-
-        appendChange(new EstimateCreated(date, value, estimateId));
-
+    public void createEstimate(Date date, Value value){
+       EstimateId estimateId = new EstimateId();
+       appendChange(new EstimateCreated(estimateId, date, value)).apply();
     }
 
-    public void updateEstimate(Date date, Value value, EstimateId estimateId){
-        Objects.requireNonNull(date);
-        Objects.requireNonNull(value);
-        Objects.requireNonNull(estimateId);
-        appendChange(new EstimateUpdated(date,value,estimateId));
+    public void updateEstimate(Date date, Value value){
+        appendChange(new EstimateUpdated(date,value)).apply();
+    }
+
+    public void createInvoice(Date date, Value value){
+        InvoiceId invoiceId = new InvoiceId();  //creo el id
+        appendChange(new InvoiceCreated(date,value, invoiceId)).apply();
+    }
+
+    public void updateInvoice(Date date, Value value){
+        appendChange(new InvoiceUpdated(date,value)).apply();
+    }
+
+    public void programTracking(Date date, StatusTracking statusTracking){
+        TrackingId trackingId = new TrackingId();
+        appendChange(new TrackingProgramed(date,statusTracking, trackingId)).apply();
     }
 
 
-    public List<Estimate> estimate() {
+    public void cancelTracking(){
+        appendChange(new TrackingCanceled()).apply();
+    }
+
+    public Estimate estimate() {
         return estimate;
     }
 
