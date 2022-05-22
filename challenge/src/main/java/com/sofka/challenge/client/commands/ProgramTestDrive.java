@@ -32,7 +32,7 @@ public class ProgramTestDrive extends Command {
         return testId;
     }
 
-    public ClientId client() {
+    public ClientId clientId() {
         return clientId;
     }
 }

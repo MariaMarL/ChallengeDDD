@@ -33,7 +33,7 @@ public class DefineVehicle extends Command {
         return vehicleId;
     }
 
-    public ClientId client() {
+    public ClientId clientId() {
         return clientId;
     }
 }

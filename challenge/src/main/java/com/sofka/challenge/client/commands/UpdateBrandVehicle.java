@@ -19,7 +19,7 @@ public class UpdateBrandVehicle extends Command {
         return brand;
     }
 
-    public ClientId client() {
+    public ClientId clientId() {
         return clientId;
     }
 }

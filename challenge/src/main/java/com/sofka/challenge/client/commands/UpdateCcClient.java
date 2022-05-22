@@ -17,7 +17,7 @@ public class UpdateCcClient extends Command {
         return cc;
     }
 
-    public ClientId client() {
+    public ClientId clientId() {
         return clientId;
     }
 }

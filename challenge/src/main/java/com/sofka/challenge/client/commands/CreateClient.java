@@ -19,7 +19,7 @@ public class CreateClient extends Command {
         return budget;
     }
 
-    public ClientId client() {
+    public ClientId clientId() {
         return clientd;
     }
 }

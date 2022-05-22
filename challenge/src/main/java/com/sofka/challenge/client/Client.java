@@ -54,7 +54,7 @@ public class Client extends AggregateEvent<ClientId> {
         appendChange(new CcClientUpdated(cc)).apply();
     }
 
-    public void UpdateColorVehicle(Color color){
+    public void updateColorVehicle(Color color){
         appendChange(new ColorVehicleUpdated(color)).apply();
     }
 

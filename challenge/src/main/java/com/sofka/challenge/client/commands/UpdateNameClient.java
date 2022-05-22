@@ -20,7 +20,7 @@ public class UpdateNameClient extends Command {
     }
 
 
-    public ClientId client() {
+    public ClientId clientId() {
         return clientId;
     }
 }

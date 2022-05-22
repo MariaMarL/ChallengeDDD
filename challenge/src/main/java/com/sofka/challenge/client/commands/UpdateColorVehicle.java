@@ -19,7 +19,7 @@ public class UpdateColorVehicle extends Command {
         return color;
     }
 
-    public ClientId client() {
+    public ClientId clientId() {
         return clientId;
     }
 }

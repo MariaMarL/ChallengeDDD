@@ -31,7 +31,7 @@ public class RegisterClient extends Command {
         return registerId;
     }
 
-    public ClientId client() {
+    public ClientId clientId() {
         return clientId;
     }
 }

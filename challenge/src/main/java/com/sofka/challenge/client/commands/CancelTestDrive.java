@@ -26,7 +26,7 @@ public class CancelTestDrive extends Command {
         return statusTest;
     }
 
-    public ClientId client() {
+    public ClientId clientId() {
         return clientId;
     }
 }
