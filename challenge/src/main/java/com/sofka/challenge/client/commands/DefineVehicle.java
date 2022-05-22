@@ -12,13 +12,13 @@ public class DefineVehicle extends Command {
     private final Brand brand;
     private final Color color;
     private final VehicleId vehicleId;
-    private final ClientId client;
+    private final ClientId clientId;
 
-    public DefineVehicle(Brand brand, Color color, VehicleId vehicleId, ClientId client) {
+    public DefineVehicle(Brand brand, Color color, VehicleId vehicleId, ClientId clientId) {
         this.brand = brand;
         this.color = color;
         this.vehicleId = vehicleId;
-        this.client = client;
+        this.clientId = clientId;
     }
 
     public Brand brand() {
@@ -34,6 +34,6 @@ public class DefineVehicle extends Command {
     }
 
     public ClientId client() {
-        return client;
+        return clientId;
     }
 }

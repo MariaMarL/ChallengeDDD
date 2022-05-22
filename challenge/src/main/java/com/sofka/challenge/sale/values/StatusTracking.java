@@ -1,9 +1,6 @@
 package com.sofka.challenge.sale.values;
 
 import co.com.sofka.domain.generic.ValueObject;
-import com.sofka.challenge.client.values.EnumOption;
-
-import java.util.Objects;
 
 public class StatusTracking implements ValueObject<StatusTracking.Option> {
 

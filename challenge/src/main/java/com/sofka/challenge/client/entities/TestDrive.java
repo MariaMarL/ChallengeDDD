@@ -13,9 +13,7 @@ public class TestDrive extends Entity<TestId> {
 
 
 
-    public TestDrive(TestId entityId,
-                     Date date,
-                     StatusTest statusTest) {
+    public TestDrive(TestId entityId, Date date, StatusTest statusTest) {
         super(entityId);
         this.date = date;
         this.statusTest = statusTest;
@@ -24,17 +22,13 @@ public class TestDrive extends Entity<TestId> {
 
     public void programTestDrive(Date date, StatusTest statusTest){
         this.date = Objects.requireNonNull(date);
-        this.statusTest = Objects.requireNonNull(statusTest);
+        this.statusTest = new StatusTest(StatusTest.Status.PROGRAMMED);
     }
 
-    public void cancelTestDrive(Date date, StatusTest statusTest){
-        this.statusTest = Objects.requireNonNull(statusTest);
+    public void cancelTestDrive(StatusTest statusTest){
+        this.statusTest = new StatusTest(StatusTest.Status.CANCELED);
     }
 
-    public void uploadTestDrive(Date date, StatusTest statusTest){
-        this.date = Objects.requireNonNull(date);
-        this.statusTest = Objects.requireNonNull(statusTest);
-    }
 
     public Date date() {
         return date;

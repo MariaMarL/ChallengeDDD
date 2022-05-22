@@ -10,13 +10,13 @@ public class RegisterClient extends Command {
     private final Name name;
     private final Cc cc;
     private final RegisterId registerId;
-    private final ClientId client;
+    private final ClientId clientId;
 
-    public RegisterClient(Name name, Cc cc, RegisterId registerId, ClientId client) {
+    public RegisterClient(Name name, Cc cc, RegisterId registerId, ClientId clientId) {
         this.name = name;
         this.cc = cc;
         this.registerId = registerId;
-        this.client = client;
+        this.clientId = clientId;
     }
 
     public Name name() {
@@ -32,7 +32,7 @@ public class RegisterClient extends Command {
     }
 
     public ClientId client() {
-        return client;
+        return clientId;
     }
 }
 

@@ -7,12 +7,12 @@ import com.sofka.challenge.client.values.ClientId;
 public class UpdateBrandVehicle extends Command {
 
     private final Brand brand;
-    private final ClientId client;
+    private final ClientId clientId;
 
 
-    public UpdateBrandVehicle(Brand brand, ClientId client) {
+    public UpdateBrandVehicle(Brand brand, ClientId clientId) {
         this.brand = brand;
-        this.client = client;
+        this.clientId = clientId;
     }
 
     public Brand brand() {
@@ -20,6 +20,6 @@ public class UpdateBrandVehicle extends Command {
     }
 
     public ClientId client() {
-        return client;
+        return clientId;
     }
 }

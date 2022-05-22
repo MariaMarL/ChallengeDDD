@@ -10,14 +10,14 @@ public class ProgramTestDrive extends Command {
     private final Date date;
     private final StatusTest statusTest;
     private final TestId testId;
-    private final ClientId client;
+    private final ClientId clientId;
 
 
-    public ProgramTestDrive(Date date, StatusTest statusTest, TestId testId, ClientId client) {
+    public ProgramTestDrive(Date date, StatusTest statusTest, TestId testId, ClientId clientId) {
         this.date = date;
         this.statusTest = statusTest;
         this.testId = testId;
-        this.client = client;
+        this.clientId = clientId;
     }
 
     public Date date() {
@@ -33,6 +33,6 @@ public class ProgramTestDrive extends Command {
     }
 
     public ClientId client() {
-        return client;
+        return clientId;
     }
 }

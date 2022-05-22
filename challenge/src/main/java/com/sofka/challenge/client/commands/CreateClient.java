@@ -7,12 +7,12 @@ import com.sofka.challenge.client.values.ClientId;
 public class CreateClient extends Command {
 
     private final Budget budget;
-    private final ClientId client;
+    private final ClientId clientd;
 
 
-    public CreateClient(Budget budget, ClientId client) {
+    public CreateClient(Budget budget, ClientId clientId) {
         this.budget = budget;
-        this.client = client;
+        this.clientd = clientId;
     }
 
     public Budget budget() {
@@ -20,6 +20,6 @@ public class CreateClient extends Command {
     }
 
     public ClientId client() {
-        return client;
+        return clientd;
     }
 }

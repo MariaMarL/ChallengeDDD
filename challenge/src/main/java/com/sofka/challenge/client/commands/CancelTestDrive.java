@@ -9,20 +9,24 @@ public class CancelTestDrive extends Command {
 
     private final TestId testId;
     private final StatusTest statusTest;
-    private final ClientId client;
+    private final ClientId clientId;
 
 
-    public CancelTestDrive(TestId testId, StatusTest statusTest, ClientId client) {
+    public CancelTestDrive(TestId testId, StatusTest statusTest, ClientId clientId) {
         this.testId = testId;
         this.statusTest = statusTest;
-        this.client = client;
+        this.clientId = clientId;
     }
 
     public TestId testId() {
         return testId;
     }
 
+    public StatusTest statusTest() {
+        return statusTest;
+    }
+
     public ClientId client() {
-        return client;
+        return clientId;
     }
 }

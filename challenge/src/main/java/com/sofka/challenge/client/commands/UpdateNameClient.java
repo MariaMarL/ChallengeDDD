@@ -7,12 +7,12 @@ import com.sofka.challenge.client.values.Name;
 public class UpdateNameClient extends Command {
 
     private final Name name;
-    private final ClientId client;
+    private final ClientId clientId;
 
 
-    public UpdateNameClient(Name name, ClientId client) {
+    public UpdateNameClient(Name name, ClientId clientId) {
         this.name = name;
-        this.client = client;
+        this.clientId = clientId;
     }
 
     public Name name() {
@@ -21,7 +21,7 @@ public class UpdateNameClient extends Command {
 
 
     public ClientId client() {
-        return client;
+        return clientId;
     }
 }
 

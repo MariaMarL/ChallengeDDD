@@ -1,19 +1,22 @@
 package com.sofka.challenge.client.values;
 
 import co.com.sofka.domain.generic.ValueObject;
-import com.sofka.challenge.client.values.EnumOption;
 
 import java.util.Objects;
 
-public class StatusTest implements ValueObject<EnumOption> {
-    private final EnumOption value;
+public class StatusTest implements ValueObject<StatusTest.Status> {
+    private final StatusTest.Status value;
 
-    public StatusTest(EnumOption value) {
+    public StatusTest(Status value) {
         this.value = Objects.requireNonNull(value);
     }
 
     @Override
-    public EnumOption value() {
+    public Status value() {
         return this.value;
+    }
+
+    public enum Status {
+        PROGRAMMED, CANCELED, DONE
     }
 }

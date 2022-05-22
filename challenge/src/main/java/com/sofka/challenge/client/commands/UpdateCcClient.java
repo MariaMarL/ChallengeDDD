@@ -6,11 +6,11 @@ import com.sofka.challenge.client.values.ClientId;
 
 public class UpdateCcClient extends Command {
     private final Cc cc;
-    private final ClientId client;
+    private final ClientId clientId;
 
-    public UpdateCcClient(Cc cc, ClientId client) {
+    public UpdateCcClient(Cc cc, ClientId clientId) {
         this.cc = cc;
-        this.client = client;
+        this.clientId = clientId;
     }
 
     public Cc cc() {
@@ -18,6 +18,6 @@ public class UpdateCcClient extends Command {
     }
 
     public ClientId client() {
-        return client;
+        return clientId;
     }
 }

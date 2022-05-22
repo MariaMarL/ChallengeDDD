@@ -7,12 +7,12 @@ import com.sofka.challenge.client.values.Color;
 public class UpdateColorVehicle extends Command {
 
     private final Color color;
-    private final ClientId client;
+    private final ClientId clientId;
 
 
-    public UpdateColorVehicle(Color color, ClientId client) {
+    public UpdateColorVehicle(Color color, ClientId clientId) {
         this.color = color;
-        this.client = client;
+        this.clientId = clientId;
     }
 
     public Color color() {
@@ -20,6 +20,6 @@ public class UpdateColorVehicle extends Command {
     }
 
     public ClientId client() {
-        return client;
+        return clientId;
     }
 }
